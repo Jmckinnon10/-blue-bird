@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
-function CreateUser() {
+function NewUser() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -62,7 +62,6 @@ function CreateUser() {
   return (
     <div>
       <div className="create-user-card">
-        <img src={"./road-trip-logo.png"} alt="Road Trip" className='logo-image' />
         <div className="create-user-form">
           <form onSubmit={handleSubmit}>
             <input
@@ -108,10 +107,10 @@ function CreateUser() {
             <button className="button" type="submit">Create Account</button>
           </form>
         </div>
-          <p className="back-link"><Link to="/">← Back to Log In</Link></p>
+          <p className="back-link"><Link to="/">Log In</Link></p>
       </div>
     </div>
   )
 }
 
-export default CreateUser;
+export default NewUser;

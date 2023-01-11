@@ -47,8 +47,10 @@ function Login({ setIsLoggedIn }) {
 
   return (
     <div>
+       <div className='title'>
+        <h1>Blue Bird</h1>
+      </div>
       <div className="login-card">
-        <img src={"./road-trip-logo.png"} alt="Road Trip" className='logo-image' />
         <div className="login-form">
           <form onSubmit={onSubmit}>
             <input
@@ -75,7 +77,7 @@ function Login({ setIsLoggedIn }) {
           </form>
         </div>
         {errors ? <div className="errors">{errors}</div> : null}
-        <p className="create-acc-link"> Need an account? <Link to="/CreateUser">Create one here!</Link></p>
+        <p className="create-acc-link"> Not a Blue Bird member? <Link to="/NewUser">Sign up now!</Link></p>
       </div>
     </div>
   )
