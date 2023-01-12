@@ -55,7 +55,7 @@ function NewUser() {
         setLastName("");
         setUsername("");
         setPassword("");
-        navigate.push(`/users/${user.id}`)
+        navigate(`/users/${user.id}`)
       });
   }
 
