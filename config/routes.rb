@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :resorts, only: [:show, :index]
   resources :users, only: [:show, :index, :create]
 
+  get "./users", to: "users#index"
   get "./resorts", to: "resorts#index"
   get "./trails", to: "trails#index"
   get "/me", to: "users#show"
