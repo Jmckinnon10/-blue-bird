@@ -32,7 +32,7 @@ function Login({ setIsLoggedIn }) {
             console.log(user)
             setIsLoggedIn(true)
             setUser(user)
-            navigate.push(`/users/${user.id}`)
+            navigate(`/users/${user.id}`)
           })
         } else {
           res.json().then(json => setErrors(json.errors))
@@ -50,6 +50,7 @@ function Login({ setIsLoggedIn }) {
        <div className='title'>
         <h1>Blue Bird</h1>
       </div>
+      <div className="background-card">
       <div className="login-card">
         <div className="login-form">
           <form onSubmit={onSubmit}>
@@ -78,6 +79,7 @@ function Login({ setIsLoggedIn }) {
         </div>
         {errors ? <div className="errors">{errors}</div> : null}
         <p className="create-acc-link"> Not a Blue Bird member? <Link to="/NewUser">Sign up now!</Link></p>
+      </div>
       </div>
     </div>
   )

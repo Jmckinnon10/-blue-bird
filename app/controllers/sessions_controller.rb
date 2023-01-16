@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :authorize
+  skip_before_action :authorize, only: [:login]
   
   def login
     user = User.find_by(username: params[:username])
@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       render json: user, status: :ok
     else
-      render json: { errors: "Invalid Password or Username" }, status: :unauthorized
+      render json: { errors: "Invalid Password or Username. Please try again." }, status: :unauthorized
     end
   end
 
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
   private
 
   def user_params
-    params.permit(:username, :password, :password_confirmation, :first_name, :last_name, :profile_img)
+    params.permit(:username, :password, :password_confirmation, :first_name, :last_name)
   end
 
 end
