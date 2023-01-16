@@ -1,19 +1,21 @@
 import React from 'react'
 import { useState } from 'react'
 
-function Resorts({ name, map, reviews, trails, user }) {
+function Resorts({ name, map, trails, user }) {
   const [showTrails, setShowTrails] = useState(false)
 
   console.log(trails)
 
   const mapTrails = trails.map((trail) => {
     
-    return <li key={trail.id}>{trail.name} {trail.difficulty} <p>{reviews.map((review) => review.comment)}</p> </li>
+    console.log(trail.reviews)
+
+    return <li key={trail.id}>{trail.name} {trail.difficulty} <p>{trail.reviews.map((review) => review.comment)} </p> </li>
   })
 
-  // const mapReviews = reviews.map((review) => {
-  //   return <p key={review.id}>{review.comment}</p>
-  // })
+
+
+
 
 
 
