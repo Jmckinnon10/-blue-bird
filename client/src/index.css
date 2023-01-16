@@ -18,30 +18,37 @@ body {
 }
 
 .background-card {
-  background-color: #ffffff;
-  /* opacity: .7; */
+  display: flex;
+  align-content: center;
+  background-color: rgba(255,255,255,0.5);
   margin: auto;
   margin-top: 100px;
-  width: 400px;
+  width: 500px;
   height: 400px;
   border: 0px solid;
   border-radius: 4px;
   font-size: 12px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  /* opacity: rgba; */
 }
 
 .login-card {
-  background-color: #ffffff;
+
+  background-color: #fff;
+  opacity: 1;
   margin: auto;
   margin-top: 100px;
   width: 360px;
-  border: 0px solid;
+  border: 20px solid;
+  border-color: rgba(255,255,255,0.8);
   border-radius: 4px;
   font-size: 12px;
-  /* box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .login-form {
+  /* border-color: rgba(51,51,51,0.5);
+  border: 20px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -145,4 +152,67 @@ body {
 .button:hover {
   background-color: #bbf0ef;
   cursor: pointer;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.resort-cards {
+  flex-wrap: wrap ;
+  flex-direction: row !important;
+  display: flex ;
+  margin-left: 10px;
+  /* grid-template-rows: 1fr;
+  grid-template-columns: repeat(3,1fr); */
+}
+
+/* .image-card {
+  max-width: 300px;
+  flex-direction: row;
+  display: flex;
+} */
+
+.map-images {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(212, 237, 242);
+  /* width: 25%; */
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 0.25rem;
+  /* overflow: hidden; */
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  justify-content: center;
+}
+
+.image {
+  max-width: 280px;
+  margin: auto;
+}
+
+.trails {
+  flex-direction: column;
+  display: flex;
+}
+
+.please-work {
+
+  /* display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: repeat(3,1fr); */
+  margin-top: 40px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
 }
