@@ -1,8 +1,8 @@
 class ResortsController < ApplicationController
 
-
   def index
-    render json: Resort.all, status: :ok
-  end
+    @resorts = Resort.all
+    render json: @resorts.to_json(:include => [:trails => {:include => :reviews}])
+end
 
 end

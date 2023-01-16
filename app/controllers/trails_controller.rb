@@ -1,7 +1,8 @@
 class TrailsController < ApplicationController
 
   def index
-    render json: Trail.all, status: :ok
+    trail = Trail.all
+    render json: trail, status: :ok
   end
 
 end
