@@ -3,12 +3,21 @@ import { useState } from 'react'
 
 function Resorts({ name, map, trails, user }) {
   const [showTrails, setShowTrails] = useState(false)
+  const [selectedTrailId, setSelectedTrailId] = useState(null)
 
-  console.log(trails)
+  // console.log(trails)
 
   const mapTrails = trails.map((trail) => {
-    
-    return <li key={trail.id}>{trail.name} {trail.difficulty} <p>{trail.reviews.map((review) => review.comment)} </p> </li>
+
+    return <li 
+      className="custom-bullet"
+      key={trail.id}
+      onClick={() => setSelectedTrailId(selectedTrailId === trail.id ? null : trail.id)}>
+      {trail.name}
+      {trail.difficulty}
+      {selectedTrailId === trail.id ?
+       <p> {trail.reviews.map((review) => review.comment)} </p> : null}
+    </li>
   })
 
 
@@ -22,8 +31,8 @@ function Resorts({ name, map, trails, user }) {
     <div className="resort-cards">
 
       <div className="map-images">
-        <h2> 
-          {name} 
+        <h2>
+          {name}
         </h2>
         <p> Click map to view Trails</p>
         <img src={map} className="image" onClick={() => setShowTrails(!showTrails)} />

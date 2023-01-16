@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
     fetch("/me").then((r) => {
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((userData) => setUser(userData));
       }
     });
   }, []);
@@ -25,14 +25,15 @@ function App() {
   useEffect(() => {
     fetch("/resorts").then((r) => {
       if (r.ok) {
-        r.json().then((resorts) => setResorts(resorts));
+        r.json().then((resortsData) => setResorts(resortsData));
       }
     });
   }, []);
 
 
 
-  console.log(user)
+
+  console.log(resorts)
 
 
  
