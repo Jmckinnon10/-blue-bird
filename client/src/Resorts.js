@@ -8,8 +8,6 @@ function Resorts({ name, map, trails, user }) {
 
   const mapTrails = trails.map((trail) => {
     
-    console.log(trail.reviews)
-
     return <li key={trail.id}>{trail.name} {trail.difficulty} <p>{trail.reviews.map((review) => review.comment)} </p> </li>
   })
 
