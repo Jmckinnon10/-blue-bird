@@ -14,7 +14,7 @@ function Resorts({ name, map, trails, user }) {
   }
 
   const mapTrails = trails.map((trail) => {
-
+    
     return <li
       className="custom-bullet"
       key={trail.id}
@@ -27,7 +27,7 @@ function Resorts({ name, map, trails, user }) {
             <div className="review-box" key={review.id}>
               <p> 
                 <br />
-                {review.comment} </p>
+               {review.review_name}: {review.comment} </p>
             </div>
           )}
         </div>

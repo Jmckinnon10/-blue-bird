@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :favorites, only: [:show, :create]
-  resources :reviews, only: [:show, :create]
+  resources :reviews, only: [:show, :create, :index]
   resources :trails, only: [:show, :index]
   resources :resorts, only: [:show, :index]
   resources :users, only: [:show, :index, :create]
