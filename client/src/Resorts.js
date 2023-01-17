@@ -5,27 +5,31 @@ function Resorts({ name, map, trails, user }) {
   const [showTrails, setShowTrails] = useState(false)
   const [selectedTrailId, setSelectedTrailId] = useState(null)
 
-  // console.log(trails)
+  console.log(user)
 
   const mapTrails = trails.map((trail) => {
 
-    return <li 
+    return <li
       className="custom-bullet"
       key={trail.id}
       onClick={() => setSelectedTrailId(selectedTrailId === trail.id ? null : trail.id)}>
       {trail.name}
       {trail.difficulty}
       {selectedTrailId === trail.id ?
-       <p> {trail.reviews.map((review) => review.comment)} </p> : null}
+        <div>
+          {trail.reviews.map((review) =>
+               <div className="review-box" key={review.id}>
+               <p> {user.username}: 
+               <br/>
+               <br/>
+               {review.comment} </p>
+             </div>
+          )}
+        </div>
+        : null}
     </li>
   })
-
-
-
-
-
-
-
+  
 
   return (
     <div className="resort-cards">
@@ -42,7 +46,6 @@ function Resorts({ name, map, trails, user }) {
             <ul className="trails">
               {mapTrails}
             </ul>
-            {/* <div>{mapReviews}</div> */}
           </div>
           : null
         }
