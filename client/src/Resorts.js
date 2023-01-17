@@ -1,20 +1,19 @@
 import React from 'react'
 import { useState } from 'react'
-
+import ReviewTrail from './ReviewTrail'
 function Resorts({ name, map, trails, user }) {
   const [showTrails, setShowTrails] = useState(false)
   const [selectedTrailId, setSelectedTrailId] = useState(null)
   const [reviewTrail, setReviewTrail] = useState(null)
 
-  // console.log(user)
+
 
   const handleChange = (e) => {
-    e.preventDefault()
     setReviewTrail(e.target.value)
   }
 
   const mapTrails = trails.map((trail) => {
-    
+
     return <li
       className="custom-bullet"
       key={trail.id}
@@ -25,9 +24,11 @@ function Resorts({ name, map, trails, user }) {
         <div>
           {trail.reviews.map((review) =>
             <div className="review-box" key={review.id}>
-              <p> 
-                <br />
-               {review.review_name}: {review.comment} </p>
+              <p>
+                {review.review_name}: 
+                <br/>
+                <br/>
+                {review.comment} </p>
             </div>
           )}
         </div>
@@ -38,7 +39,6 @@ function Resorts({ name, map, trails, user }) {
 
   return (
     <div className="resort-cards">
-
       <div className="map-images">
         <h2>
           {name}
@@ -49,22 +49,17 @@ function Resorts({ name, map, trails, user }) {
           <div>
             <h3>Trails:</h3>
             <div>
-                <p>Select Trail to leave a review</p>
+              <p>Select Trail to leave a review</p>
               <select onChange={handleChange}>
-           
-            
                 {trails.map((trail) => (
-                  <option value={trail.id} key={trail.id}>{trail.name}</option>
+                  <option
+                    value={trail.id}
+                    key={trail.id}
+                  >{trail.name}</option>
                 ))}
               </select>
-              <br/>
-              {reviewTrail ?
-                <form>
-                  <textarea placeholder="Leave a review"></textarea>
-                  <br/>
-                  <button type="submit">POST</button>
-                </form>
-                : null}
+              <br />
+            <ReviewTrail user={user} reviewTrail={reviewTrail} handleChange={handleChange} trails={trails}/>
             </div>
             <ul className="trails">
               {mapTrails}

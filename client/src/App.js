@@ -5,7 +5,7 @@ import NewUser from './NewUser'
 import Home from './Home'
 import Navbar from './Navbar'
 import ResortsTrailsCollection from "./ResortsTrailsCollection";
-// import TrailCollection from "./TrailCollection";
+
 
 
 function App() {

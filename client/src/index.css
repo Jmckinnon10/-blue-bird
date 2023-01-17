@@ -155,6 +155,10 @@ body {
 }
 
 .navbar {
+  opacity: .7;
+  min-height: 35px;
+  background-color: white;
+  padding-top: 10px;
   position: fixed;
   text-decoration: none;
   top: 0;
