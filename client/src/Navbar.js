@@ -15,12 +15,13 @@ function Navbar({ user, setIsLoggedIn }) {
 
   console.log(user)
 
+
   return (
     
     <div className="navbar">
 
-      <Link className="nav-link" to="/Home">Home
-      </Link>
+      {user ? <Link className="nav-link" to={`/users/${user.id}`} >Home
+      </Link> : null}
       <Link className="nav-link" to="/Favorites">Favorite Mountains
       </Link>
       <Link className="nav-link" to="/FollowTheSnow">Follow The Snow

@@ -31,7 +31,7 @@ r2 = Review.create(comment: "The best run at Breck", user_id: dan.id, trail_id: 
 r3 = Review.create(comment: "Great tree runs", user_id: dan.id, trail_id: ambush.id)
 r4 = Review.create(comment: "a lot of moguls", user_id: tommy.id, trail_id: gold_digger.id)
 r5 = Review.create(comment: "A ton of side hits", user_id: john.id, trail_id: dragons_teeth.id)
-
+r6 = Review.create(comment: "Great for intermediate riders", user_id: chance.id, trail_id: hunky_dory.id)
 # fav1 = Review.create(user_id: john.id, trail_id: spit_fire.id)
 
 puts("Seeding Done!")
