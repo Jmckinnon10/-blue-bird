@@ -7,7 +7,7 @@ function ResortsTrailsCollection({resorts, user}) {
 
 
   const mappedResorts = resorts.map((resort) => {
-     console.log(resort.trails)
+    //  console.log(resort.trails)
     // console.log(resort)
     
     
