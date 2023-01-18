@@ -1,45 +1,45 @@
-import React from 'react'
-import { useState } from 'react'
+import React from "react";
+import { useState } from "react";
 
 function ReviewTrail({ user, changeTrail, trails, mapTrails }) {
-  const [createReview, setCreateReview] = useState("")
+  const [createReview, setCreateReview] = useState("");
   const [trailId, setTrailId] = useState(null);
-  const [review, setReview] = useState({})
+  const [review, setReview] = useState({});
 
-  const handleSubmitReview = e => {
-    e.preventDefault()
+  const handleSubmitReview = (e) => {
+    e.preventDefault();
     if (trailId) {
       const configReview = {
         comment: createReview,
         user_id: user.id,
-        trail_id: trailId.id
-      }
-      console.log(configReview)
+        trail_id: trailId.id,
+      };
+      console.log(configReview);
       fetch("/review", {
         method: "POST",
         body: JSON.stringify(configReview),
         headers: {
-          "Content-Type": "application/json"
-        }
+          "Content-Type": "application/json",
+        },
       })
-        .then(response => response.json())
-        .then(reviewData => {
-          setReview(reviewData)
+        .then((res) => res.json())
+        .then((reviewData) => {
+          setReview(reviewData);
         })
-        .catch(error => {
-          console.error(error)
-        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
-  }
+  };
 
   const changeReview = (e) => {
-    setCreateReview(e.target.value)
-  }
+    setCreateReview(e.target.value);
+  };
 
   const handleChange = (e) => {
     const selectedTrail = trails.find((trail) => trail.name === e.target.value);
     setTrailId(selectedTrail);
-  }
+  };
 
   return (
     <div>
@@ -47,12 +47,11 @@ function ReviewTrail({ user, changeTrail, trails, mapTrails }) {
         <div>
           <p>Select Trail to leave a review</p>
           <br />
-          <select onChange={handleChange} >
+          <select onChange={handleChange}>
             {trails.map((trail) => (
-              <option
-                value={changeTrail}
-                key={trail.id}
-              >{trail.name}</option>
+              <option value={changeTrail} key={trail.id}>
+                {trail.name}
+              </option>
             ))}
           </select>
         </div>
@@ -67,11 +66,9 @@ function ReviewTrail({ user, changeTrail, trails, mapTrails }) {
           <button type="submit">POST</button>
         </div>
       </form>
-      <ul className="trails">
-        {mapTrails}
-      </ul>
+      <ul className="trails">{mapTrails}</ul>
     </div>
-  )
+  );
 }
 
-export default ReviewTrail
+export default ReviewTrail;

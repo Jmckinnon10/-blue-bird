@@ -1,7 +1,7 @@
 body {
   margin-top: 80;
   background-color: #f3f3f3;
-  background-image: url('https://media.cntraveler.com/photos/5f84939a5f9755e5951db3f4/16:9/w_2560%2Cc_limit/WhitefishMountainResort-3.jpg');
+  background-image: url("https://media.cntraveler.com/photos/5f84939a5f9755e5951db3f4/16:9/w_2560%2Cc_limit/WhitefishMountainResort-3.jpg");
   background-size: cover;
   background-position: top;
   background-attachment: fixed;
@@ -9,7 +9,7 @@ body {
   font-family: sans-serif;
 }
 
-.title{
+.title {
   justify-content: center;
   margin: auto;
   margin-top: 25px;
@@ -20,7 +20,7 @@ body {
 .background-card {
   display: flex;
   align-content: center;
-  background-color: rgba(255,255,255,0.5);
+  background-color: rgba(255, 255, 255, 0.5);
   margin: auto;
   margin-top: 100px;
   width: 500px;
@@ -33,14 +33,13 @@ body {
 }
 
 .login-card {
-
   background-color: #fff;
   opacity: 1;
   margin: auto;
   margin-top: 100px;
   width: 360px;
   border: 20px solid;
-  border-color: rgba(255,255,255,0.8);
+  border-color: rgba(255, 255, 255, 0.8);
   border-radius: 4px;
   font-size: 12px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -155,7 +154,7 @@ body {
 }
 
 .navbar {
-  opacity: .7;
+  opacity: 0.7;
   min-height: 35px;
   background-color: white;
   padding-top: 10px;
@@ -168,9 +167,9 @@ body {
 }
 
 .resort-cards {
-  flex-wrap: wrap ;
+  flex-wrap: wrap;
   flex-direction: row !important;
-  display: flex ;
+  display: flex;
   margin-left: 10px;
   /* grid-template-rows: 1fr;
   grid-template-columns: repeat(3,1fr); */
@@ -206,16 +205,17 @@ body {
   margin: auto;
 }
 
+.image-title {
+  width: 100 px;
+  height: 100 px;
+}
+
 .trails {
   flex-direction: column;
   display: flex;
 }
 
 .please-work {
-
-  /* display: grid;
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(3,1fr); */
   margin-top: 40px;
   flex-wrap: wrap;
   display: flex;
@@ -223,17 +223,15 @@ body {
 }
 
 /* .custom-bullet {
-
     list-style-image: url('https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/snowflake_2744-fe0f.png');
-
   } */
 
-  .review-box {
-    background-color: #f2f2f2;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
+.review-box {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
 
-  /* text decoration: none 
+/* text decoration: none 
   cursor: pointer color: white */
