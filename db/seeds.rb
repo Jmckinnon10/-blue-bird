@@ -20,6 +20,7 @@ dan = User.create(username:"dferraro", password:"12345678", first_name:"Dan", la
 chance = User.create(username:"cmarrocco", password:"12345678", first_name:"Chance", last_name:"Marrocco")
 #Trails
 hunky_dory = Trail.create(name:"Hunky Dory", difficulty: "🟦", resort_id: vail.id)
+klickity_klack = Trail.create(name:"Klickity Klack", difficulty: "♦", resort_id: vail.id)
 dragons_teeth = Trail.create(name:"Dragons Teeth", difficulty: "♦", resort_id: vail.id)
 spit_fire = Trail.create(name:"Spit Fire", difficulty: "♦", resort_id: breckenridge.id)
 ambush = Trail.create(name:"Ambush", difficulty: "♦", resort_id: keystone.id)
