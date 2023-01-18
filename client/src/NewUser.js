@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 function NewUser() {
-
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -26,8 +25,6 @@ function NewUser() {
     setLastName(e.target.value);
   }
 
-
-
   function handleSubmit(e) {
     e.preventDefault();
     console.log("submitted");
@@ -36,9 +33,8 @@ function NewUser() {
       first_name: firstName,
       last_name: lastName,
       username,
-      password
+      password,
     };
-
 
     const configObject = {
       method: "POST",
@@ -55,7 +51,7 @@ function NewUser() {
         setLastName("");
         setUsername("");
         setPassword("");
-        navigate(`/users/${user.id}`)
+        navigate(`/users/${user.id}`);
       });
   }
 
@@ -104,13 +100,17 @@ function NewUser() {
               required
             />
             <br />
-            <button className="button" type="submit">Create Account</button>
+            <button className="button" type="submit">
+              Create Account
+            </button>
           </form>
         </div>
-          <p className="back-link"><Link to="/">Log In</Link></p>
+        <p className="back-link">
+          <Link to="/">Log In</Link>
+        </p>
       </div>
     </div>
-  )
+  );
 }
 
 export default NewUser;

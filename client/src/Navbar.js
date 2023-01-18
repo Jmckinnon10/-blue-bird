@@ -7,26 +7,30 @@ function Navbar({ user, setIsLoggedIn }) {
   function handleLogout() {
     fetch("/logout", {
       method: "DELETE",
-    })
-    console.log("User logged out")
+    });
+    console.log("User logged out");
     navigate("/");
     setIsLoggedIn(false);
   }
 
-  console.log(user)
-
+  console.log(user);
 
   return (
-    
     <div className="navbar">
-
-      {user ? <Link className="nav-link" to={`/users/${user.id}`} >Home
-      </Link> : null}
-      <Link className="nav-link" to="/Favorites">Favorite Mountains
+      {user ? (
+        <Link className="nav-link" to={`/users/${user.id}`}>
+          Home
+        </Link>
+      ) : null}
+      <Link className="nav-link" to="/Favorites">
+        Favorite Mountains
       </Link>
-      <Link className="nav-link" to="/FollowTheSnow">Follow The Snow
+      <Link className="nav-link" to="/FollowTheSnow">
+        Follow The Snow
       </Link>
-      <Link to="/" onClick={handleLogout} className="nav-link"> Log Out
+      <Link to="/" onClick={handleLogout} className="nav-link">
+        {" "}
+        Log Out
       </Link>
     </div>
   );
