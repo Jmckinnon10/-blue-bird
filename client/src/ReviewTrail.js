@@ -1,10 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
 
-function ReviewTrail({user, reviewTrail, handleChange, trails}) {
-   const [createReview, setCreateReview] = useState("")
+function ReviewTrail({ user, changeTrail, trails, handleChange, mapTrails }) {
+  const [createReview, setCreateReview] = useState("")
 
- const mapTrails = trails.map((trail) => trail.id)
+
 
 
   const handleSubmitReview = e => {
@@ -19,21 +19,43 @@ function ReviewTrail({user, reviewTrail, handleChange, trails}) {
     console.log(configReview)
   }
 
+  const changeReview = (e) => {
+    setCreateReview(e.target.value)
+  }
+
+
 
 
   return (
     <div>
-    {reviewTrail ?
       <form onSubmit={handleSubmitReview}>
-        <textarea 
-        placeholder="Leave a review"
-        value={createReview}
-        onChange={handleChange}
-        ></textarea>
-        <br />
-        <button type="submit">POST</button>
+        <div>
+          <p>Select Trail to leave a review</p>
+          <br />
+          <select onChange={handleChange} >
+            {trails.map((trail) => (
+              <option
+                placeholder="select resort"
+                value={changeTrail}
+                key={trail.id}
+              >{trail.name}</option>
+            ))}
+          </select>
+        </div>
+          <br/>
+        <div>
+          <textarea
+            placeholder="Leave a review"
+            value={createReview}
+            onChange={changeReview}
+          ></textarea>
+          <br />
+          <button type="submit">POST</button>
+        </div>
       </form>
-      : null}
+      <ul className="trails">
+        {mapTrails}
+      </ul>
     </div>
   )
 }

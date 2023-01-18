@@ -31,8 +31,6 @@ function App() {
     });
   }, []);
 
-  console.log(user)
-
   return (
     <div>
       {isLoading ? <div>Loading...</div> : <Navbar user={user}/>}
