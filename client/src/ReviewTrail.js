@@ -1,30 +1,45 @@
 import React from 'react'
 import { useState } from 'react'
 
-function ReviewTrail({ user, changeTrail, trails, handleChange, mapTrails }) {
+function ReviewTrail({ user, changeTrail, trails, mapTrails }) {
   const [createReview, setCreateReview] = useState("")
-
-
-
+  const [trailId, setTrailId] = useState(null);
+  const [review, setReview] = useState({})
 
   const handleSubmitReview = e => {
     e.preventDefault()
-
-    const configReview = {
-      comment: createReview,
-      user_id: user.id,
-      trail_id: mapTrails
+    if (trailId) {
+      const configReview = {
+        comment: createReview,
+        user_id: user.id,
+        trail_id: trailId.id
+      }
+      console.log(configReview)
+      fetch("/review", {
+        method: "POST",
+        body: JSON.stringify(configReview),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(response => response.json())
+        .then(reviewData => {
+          setReview(reviewData)
+        })
+        .catch(error => {
+          console.error(error)
+        })
     }
-
-    console.log(configReview)
   }
 
   const changeReview = (e) => {
     setCreateReview(e.target.value)
   }
 
-
-
+  const handleChange = (e) => {
+    const selectedTrail = trails.find((trail) => trail.name === e.target.value);
+    setTrailId(selectedTrail);
+  }
 
   return (
     <div>
@@ -35,17 +50,16 @@ function ReviewTrail({ user, changeTrail, trails, handleChange, mapTrails }) {
           <select onChange={handleChange} >
             {trails.map((trail) => (
               <option
-                placeholder="select resort"
                 value={changeTrail}
                 key={trail.id}
               >{trail.name}</option>
             ))}
           </select>
         </div>
-          <br/>
+        <br />
         <div>
           <textarea
-            placeholder="Leave a review"
+            placeholder="Leave a trail review"
             value={createReview}
             onChange={changeReview}
           ></textarea>
