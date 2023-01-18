@@ -4,18 +4,13 @@ import ReviewTrail from './ReviewTrail'
 function Resorts({ name, map, trails, user }) {
   const [showTrails, setShowTrails] = useState(false)
   const [selectedTrailId, setSelectedTrailId] = useState(null)
-  const [changeTrail, setChangeTrail] = useState(null)
 
 
-
-  const handleChange = (e) => {
-    setChangeTrail(e.target.value)
-  }
 
   const mapTrails = trails.map((trail) => {
 
-    return <li 
-      style={{cursor:"pointer"}}
+    return <li
+      style={{ cursor: "pointer" }}
       className="custom-bullet"
       key={trail.id}
       onClick={() => setSelectedTrailId(selectedTrailId === trail.id ? null : trail.id)}>
@@ -26,9 +21,9 @@ function Resorts({ name, map, trails, user }) {
           {trail.reviews.map((review) =>
             <div className="review-box" key={review.id}>
               <p>
-                {review.review_name}: 
-                <br/>
-                <br/>
+                {review.review_name}:
+                <br />
+                <br />
                 {review.comment} </p>
             </div>
           )}
@@ -45,9 +40,9 @@ function Resorts({ name, map, trails, user }) {
           {name}
         </h2>
         <p> Click map to view Trails</p>
-        <img src={map} className="image" onClick={() => setShowTrails(!showTrails)} />
+        <img style={{ cursor: "pointer" }} src={map} className="image" onClick={() => setShowTrails(!showTrails)} />
         {showTrails ?
-            <ReviewTrail  mapTrails={mapTrails} user={user} changeTrail={changeTrail} handleChange={handleChange} trails={trails} /> 
+          <ReviewTrail mapTrails={mapTrails} user={user} trails={trails} />
           : null
         }
       </div>
