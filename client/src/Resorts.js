@@ -1,9 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import ReviewTrail from "./ReviewTrail";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+library.add(faStar);
+
 function Resorts({ name, map, trails, user }) {
   const [showTrails, setShowTrails] = useState(false);
   const [selectedTrailId, setSelectedTrailId] = useState(null);
+  const [favoriteClicked, setFavoriteClicked] = useState(null);
 
   const mapTrails = trails.map((trail) => {
     return (
@@ -15,6 +22,12 @@ function Resorts({ name, map, trails, user }) {
           setSelectedTrailId(selectedTrailId === trail.id ? null : trail.id)
         }
       >
+        <button
+          className={`favorite-button ${favoriteClicked ? "selected" : ""}`}
+          onClick={() => setFavoriteClicked(!favoriteClicked)}
+        >
+          <FontAwesomeIcon icon={faStar} />
+        </button>
         {trail.name}
         {trail.difficulty}
         {selectedTrailId === trail.id ? (
@@ -25,7 +38,7 @@ function Resorts({ name, map, trails, user }) {
                   {review.review_name}:
                   <br />
                   <br />
-                  {review.comment}{" "}
+                  {review.comment}
                 </p>
               </div>
             ))}
