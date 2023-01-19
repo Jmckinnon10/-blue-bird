@@ -5,7 +5,6 @@ function ResortsTrailsCollection({ resorts, user }) {
   const mappedResorts = resorts.map((resort) => {
     //  console.log(resort.trails)
     // console.log(resort)
-
     return (
       <Resorts
         key={resort.id}
@@ -18,7 +17,7 @@ function ResortsTrailsCollection({ resorts, user }) {
     );
   });
 
-  return <div className="please-work">{mappedResorts}</div>;
+  return <div className="top-div">{mappedResorts}</div>;
 }
 
 export default ResortsTrailsCollection;

@@ -22,8 +22,8 @@ function Navbar({ user, setIsLoggedIn }) {
           Home
         </Link>
       ) : null}
-      <Link className="nav-link" to="/Favorites">
-        Favorite Mountains
+      <Link className="nav-link" to="/FavoriteMountain">
+        Favorite Resort
       </Link>
       <Link className="nav-link" to="/FollowTheSnow">
         Follow The Snow

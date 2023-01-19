@@ -2,15 +2,16 @@ import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "./Login";
 import NewUser from "./NewUser";
-import Home from "./Home";
 import Navbar from "./Navbar";
 import ResortsTrailsCollection from "./ResortsTrailsCollection";
+import FavoriteResort from "./FavoriteResort";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState({});
   const [resorts, setResorts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [favoriteResort, setFavoriteResort] = useState([]);
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -29,6 +30,14 @@ function App() {
     });
   }, []);
 
+  useEffect(() => {
+    fetch("/users").then((r) => {
+      if (r.ok) {
+        r.json().then((userFavorite) => console.log(userFavorite));
+      }
+    });
+  }, []);
+
   return (
     <div>
       {isLoading ? <div>Loading...</div> : <Navbar user={user} />}
@@ -42,6 +51,10 @@ function App() {
         <Route
           path={`/users/${user.id}`}
           element={<ResortsTrailsCollection resorts={resorts} user={user} />}
+        ></Route>
+        <Route
+          path={"/FavoriteMountain"}
+          element={<FavoriteResort user={user} />}
         ></Route>
       </Routes>
     </div>
