@@ -220,15 +220,41 @@ body {
   justify-content: center;
 }
 
-/* .custom-bullet {
-    list-style-image: url('https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/325/snowflake_2744-fe0f.png');
-  } */
-
 .review-box {
   background-color: #f2f2f2;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
+}
+
+.fav-card {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 0.25rem;
+  /* overflow: hidden; */
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+}
+
+.resort-map {
+  max-width: 300px;
+  margin: auto;
+}
+
+.resort-name {
+  margin: auto;
+  width: 100 px;
+  height: 100 px;
 }
 
 /* text decoration: none 

@@ -11,7 +11,6 @@ function App() {
   const [user, setUser] = useState({});
   const [resorts, setResorts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [favoriteResort, setFavoriteResort] = useState([]);
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -26,14 +25,6 @@ function App() {
     fetch("/resorts").then((r) => {
       if (r.ok) {
         r.json().then((resortsData) => setResorts(resortsData));
-      }
-    });
-  }, []);
-
-  useEffect(() => {
-    fetch("/users").then((r) => {
-      if (r.ok) {
-        r.json().then((userFavorite) => console.log(userFavorite));
       }
     });
   }, []);
@@ -53,7 +44,7 @@ function App() {
           element={<ResortsTrailsCollection resorts={resorts} user={user} />}
         ></Route>
         <Route
-          path={"/FavoriteMountain"}
+          path={"/FavoriteResort"}
           element={<FavoriteResort user={user} />}
         ></Route>
       </Routes>
