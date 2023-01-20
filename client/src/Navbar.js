@@ -13,8 +13,6 @@ function Navbar({ user, setIsLoggedIn }) {
     setIsLoggedIn(false);
   }
 
-  console.log(user);
-
   return (
     <div className="navbar">
       {user ? (
@@ -22,7 +20,7 @@ function Navbar({ user, setIsLoggedIn }) {
           Home
         </Link>
       ) : null}
-      <Link className="nav-link" to="/FavoriteMountain">
+      <Link className="nav-link" to="/FavoriteResort">
         Favorite Resort
       </Link>
       <Link className="nav-link" to="/FollowTheSnow">

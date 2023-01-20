@@ -22,12 +22,6 @@ function Resorts({ name, map, trails, user }) {
           setSelectedTrailId(selectedTrailId === trail.id ? null : trail.id)
         }
       >
-        <button
-          className={`favorite-button ${favoriteClicked ? "selected" : ""}`}
-          onClick={() => setFavoriteClicked(!favoriteClicked)}
-        >
-          <FontAwesomeIcon icon={faStar} />
-        </button>
         {trail.name}
         {trail.difficulty}
         {selectedTrailId === trail.id ? (
