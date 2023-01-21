@@ -1,13 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import ReviewTrail from "./ReviewTrail";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
-library.add(faStar);
-
-function Resorts({ name, map, trails, user }) {
+import ClickForFavorite from "./ClickForFavorite";
+function Resorts({ name, map, trails, user, setNewFavorite }) {
   const [showTrails, setShowTrails] = useState(false);
   const [selectedTrailId, setSelectedTrailId] = useState(null);
   const [favoriteClicked, setFavoriteClicked] = useState(null);
@@ -24,6 +19,15 @@ function Resorts({ name, map, trails, user }) {
       >
         {trail.name}
         {trail.difficulty}
+        <span>
+          <ClickForFavorite
+            setNewFavorite={setNewFavorite}
+            user={user}
+            trail={trail}
+            setFavoriteClicked={setFavoriteClicked}
+            favoriteClicked={favoriteClicked}
+          />
+        </span>
         {selectedTrailId === trail.id ? (
           <div>
             {trail.reviews.map((review) => (
