@@ -1,4 +1,5 @@
 import React from "react";
+import Snowfall from "react-snowfall";
 
 function FavoriteResort({ user }) {
   return (

@@ -9,7 +9,17 @@ copper = Resort.create(name: "https://i.imgur.com/Pbok6pV.jpg", map: "https://sk
 loon = Resort.create(name: "https://i.imgur.com/Su6NkPI.jpg", map: "https://res.cloudinary.com/liftopia/image/upload/c_fit,d_defaults:default_logo_1.png,f_auto,h_980,q_auto,w_980/v1/production/trail_maps/Loon_TrailMap18.19_58ab850f3eefdcc76b5e16f6ebbe52ba")
 telluride = Resort.create(name: "https://i.imgur.com/iaAoCD6.jpg", map: "https://s3.onthesnow.com/images/trailmaps/colorado/telluride/20181004155715/large.jpg")
 stowe = Resort.create(name: "https://i.imgur.com/NV0LYjq.jpg", map: "https://skimap.org/data/212/3535/1635228546jpg_render.jpg")
+okemo = Resort.create(name: "https://i.imgur.com/jjmGiRZ.jpg", map: "https://s3.onthesnow.com/images/trailmaps/vermont/okemo-mountain-resort/20161118205447/xlarge.jpg")
+jackson_hole = Resort.create(name: "https://i.imgur.com/2EogNO9.jpg", map: "https://www.datocms-assets.com/50871/1636863909-2021-22-background-updated-outlines.jpg")
+big_sky = Resort.create(name: "https://i.imgur.com/Q8WAhL9.jpg", map: "https://skimap.org/data/361/7/1257012299jpg_render.jpg")
+park_city = Resort.create(name: "https://i.imgur.com/Xr0KQuB.jpg", map: "https://dam-assets.vailresorts.com/is/image/vailresorts/2223_PC_TrailMapArt_digital_partners?resMode=sharp2&w=1728&h=1247&wid=392&fit=constrain,1&dpr=on,2.625")
 killington = Resort.create(name: "https://i.imgur.com/pDG978B.jpg", map: "https://www.newenglandskihistory.com/maps/Vermont/killington/killingtonmap-2000-0000a.jpg")
+
+
+# okemo https://s3.onthesnow.com/images/trailmaps/vermont/okemo-mountain-resort/20161118205447/xlarge.jpg
+# jackson hole https://www.datocms-assets.com/50871/1636863909-2021-22-background-updated-outlines.jpg
+# big sky https://skimap.org/data/361/7/1257012299jpg_render.jpg
+# park city https://dam-assets.vailresorts.com/is/image/vailresorts/2223_PC_TrailMapArt_digital_partners?resMode=sharp2&w=1728&h=1247&wid=392&fit=constrain,1&dpr=on,2.625
 
 #Users
 john = User.create(username:"jmckinnon10", password: "12345678", first_name:"John", last_name:"McKinnon")
@@ -34,8 +44,8 @@ r5 = Review.create(comment: "A ton of side hits", user_id: john.id, trail_id: dr
 r6 = Review.create(comment: "Great for intermediate riders", user_id: chance.id, trail_id: hunky_dory.id)
 
 #favorites
-fav1 = Favorite.create(favorited: true, user_id: john.id, trail_id: hunky_dory.id)
-fav2 = Favorite.create(favorited: true, user_id: john.id, trail_id: dragons_teeth.id)
+fav1 = Favorite.create(favorited: true, user_id: john.id, trail_id: gold_digger.id)
+fav2 = Favorite.create(favorited: true, user_id: dan.id, trail_id: dragons_teeth.id)
 fav3 = Favorite.create(favorited: true, user_id: dan.id, trail_id: spit_fire.id)
 fav4 = Favorite.create(favorited: true, user_id: tommy.id, trail_id: ambush.id)
 fav5 = Favorite.create(favorited: true, user_id: chance.id, trail_id: gold_digger.id)

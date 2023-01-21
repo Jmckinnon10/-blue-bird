@@ -11,15 +11,20 @@ function App() {
   const [user, setUser] = useState({});
   const [resorts, setResorts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [newFavorite, setNewFavorite] = useState(false);
+  const [dataFetched, setDataFetched] = useState(false);
 
   useEffect(() => {
-    fetch("/me").then((r) => {
-      if (r.ok) {
-        r.json().then((userData) => setUser(userData));
-        setIsLoading(false);
-      }
-    });
-  }, []);
+    if (newFavorite || !dataFetched) {
+      fetch("/me").then((r) => {
+        if (r.ok) {
+          r.json().then((userData) => setUser(userData));
+          setIsLoading(false);
+          setNewFavorite(false);
+        }
+      });
+    }
+  }, [newFavorite, setNewFavorite]);
 
   useEffect(() => {
     fetch("/resorts").then((r) => {
@@ -41,7 +46,13 @@ function App() {
         <Route path="/NewUser" element={<NewUser />}></Route>
         <Route
           path={`/users/${user.id}`}
-          element={<ResortsTrailsCollection resorts={resorts} user={user} />}
+          element={
+            <ResortsTrailsCollection
+              resorts={resorts}
+              user={user}
+              setNewFavorite={setNewFavorite}
+            />
+          }
         ></Route>
         <Route
           path={"/FavoriteResort"}

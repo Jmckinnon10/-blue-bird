@@ -1,7 +1,7 @@
 import React from "react";
 import Resorts from "./Resorts";
 
-function ResortsTrailsCollection({ resorts, user }) {
+function ResortsTrailsCollection({ resorts, user, setNewFavorite }) {
   const mappedResorts = resorts.map((resort) => {
     //  console.log(resort.trails)
     // console.log(resort)
@@ -13,6 +13,7 @@ function ResortsTrailsCollection({ resorts, user }) {
         resort={resort}
         trails={resort.trails}
         user={user}
+        setNewFavorite={setNewFavorite}
       />
     );
   });
