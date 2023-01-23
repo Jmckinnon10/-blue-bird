@@ -5,6 +5,7 @@ import NewUser from "./NewUser";
 import Navbar from "./Navbar";
 import ResortsTrailsCollection from "./ResortsTrailsCollection";
 import FavoriteResort from "./FavoriteResort";
+import Snow from "./Snowfall";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -36,6 +37,7 @@ function App() {
 
   return (
     <div>
+      <Snow />
       {isLoading ? <div>Loading...</div> : <Navbar user={user} />}
       <Routes>
         <Route
