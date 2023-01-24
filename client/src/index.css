@@ -263,5 +263,37 @@ body {
   height: 100 px;
 }
 
+.post-button {
+  color: white;
+  background-color: #31b3ef;
+}
+
+.liked-text {
+  color: #31b3ef;
+  text-align: center;
+}
+
+.no-favorite {
+  max-width: 500px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 0.25rem;
+}
+
+.first-favorite {
+  color: #31b3ef;
+  text-align: center;
+}
 /* text decoration: none 
   cursor: pointer color: white */

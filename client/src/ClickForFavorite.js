@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 
 function ClickForFavorite({
   user,
@@ -7,6 +8,9 @@ function ClickForFavorite({
   favoriteClicked,
   setNewFavorite,
 }) {
+  const [buttonColor, setButtonColor] = useState("white");
+
+  console.log(trail.id);
   const fav_obj = {
     favorited: favoriteClicked,
     user_id: user.id,
@@ -24,7 +28,7 @@ function ClickForFavorite({
     })
       .then((res) => res.json())
       .then((favData) => {
-        console.log("clicked");
+        setButtonColor(favData ? "yellow" : "white");
         setFavoriteClicked(favData);
         setNewFavorite(true);
       })
@@ -35,7 +39,12 @@ function ClickForFavorite({
 
   return (
     <div>
-      <button onClick={handleClick}>Favorite</button>
+      <button
+        onClick={handleClick}
+        style={{ backgroundColor: buttonColor, cursor: "pointer" }}
+      >
+        ⭐
+      </button>
     </div>
   );
 }
