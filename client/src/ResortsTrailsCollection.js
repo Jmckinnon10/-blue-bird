@@ -28,7 +28,6 @@ function ResortsTrailsCollection({
 
   return (
     <>
-      {/* <Navbar setUser={setUser} user={user} setIsLoggedIn={setIsLoggedIn} /> */}
       <div className="top-div">{mappedResorts}</div>
     </>
   );

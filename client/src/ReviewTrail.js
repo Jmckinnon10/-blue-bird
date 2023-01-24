@@ -64,7 +64,9 @@ function ReviewTrail({ user, changeTrail, trails, mapTrails, setNewReview }) {
             onChange={changeReview}
           ></textarea>
           <br />
-          <button type="submit">POST</button>
+          <button className="post-button" type="submit">
+            POST REVIEW
+          </button>
         </div>
       </form>
       <ul className="trails">{mapTrails}</ul>
