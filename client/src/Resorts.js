@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import ReviewTrail from "./ReviewTrail";
 import ClickForFavorite from "./ClickForFavorite";
-function Resorts({ name, map, trails, user, setNewFavorite }) {
+function Resorts({ name, map, trails, user, setNewFavorite, setNewReview }) {
   const [showTrails, setShowTrails] = useState(false);
   const [selectedTrailId, setSelectedTrailId] = useState(null);
   const [favoriteClicked, setFavoriteClicked] = useState(null);
@@ -19,15 +19,15 @@ function Resorts({ name, map, trails, user, setNewFavorite }) {
       >
         {trail.name}
         {trail.difficulty}
-        <span>
-          <ClickForFavorite
-            setNewFavorite={setNewFavorite}
-            user={user}
-            trail={trail}
-            setFavoriteClicked={setFavoriteClicked}
-            favoriteClicked={favoriteClicked}
-          />
-        </span>
+
+        <ClickForFavorite
+          setNewFavorite={setNewFavorite}
+          user={user}
+          trail={trail}
+          setFavoriteClicked={setFavoriteClicked}
+          favoriteClicked={favoriteClicked}
+        />
+
         {selectedTrailId === trail.id ? (
           <div>
             {trail.reviews.map((review) => (
@@ -58,7 +58,12 @@ function Resorts({ name, map, trails, user, setNewFavorite }) {
           onClick={() => setShowTrails(!showTrails)}
         />
         {showTrails ? (
-          <ReviewTrail mapTrails={mapTrails} user={user} trails={trails} />
+          <ReviewTrail
+            mapTrails={mapTrails}
+            user={user}
+            trails={trails}
+            setNewReview={setNewReview}
+          />
         ) : null}
       </div>
     </div>

@@ -10,5 +10,4 @@ class UserSerializer < ActiveModel::Serializer
       fav.present? ? object.resorts.find(fav.first.resort_id) : nil
     end
   end
-
 end

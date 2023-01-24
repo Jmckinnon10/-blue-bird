@@ -14,18 +14,21 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [newFavorite, setNewFavorite] = useState(false);
   const [dataFetched, setDataFetched] = useState(false);
+  const [newReview, setNewReview] = useState(false);
+  const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
-    if (newFavorite || !dataFetched) {
+    if (newFavorite || !dataFetched || newReview) {
       fetch("/me").then((r) => {
         if (r.ok) {
           r.json().then((userData) => setUser(userData));
           setIsLoading(false);
           setNewFavorite(false);
+          setNewReview(false);
         }
       });
     }
-  }, [newFavorite, setNewFavorite]);
+  }, [newFavorite, setNewFavorite, newReview, setNewReview]);
 
   useEffect(() => {
     fetch("/resorts").then((r) => {
@@ -37,8 +40,16 @@ function App() {
 
   return (
     <div>
+      <img className="blue-bird" src="https://i.imgur.com/eZM5DX4.png" />
       <Snow />
-      {isLoading ? <div>Loading...</div> : <Navbar user={user} />}
+
+      <Navbar
+        setUser={setUser}
+        user={user}
+        setIsLoggedIn={setIsLoggedIn}
+        isLoggedIn={isLoggedIn}
+      />
+
       <Routes>
         <Route
           exact
@@ -53,6 +64,9 @@ function App() {
               resorts={resorts}
               user={user}
               setNewFavorite={setNewFavorite}
+              setNewReview={setNewReview}
+              setIsLoading={setIsLoading}
+              setUser={setUser}
             />
           }
         ></Route>

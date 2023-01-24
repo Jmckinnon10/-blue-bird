@@ -17,19 +17,14 @@ body {
   color: white;
 }
 
-.background-card {
-  display: flex;
-  align-content: center;
-  background-color: rgba(255, 255, 255, 0.5);
+.blue-bird {
+  padding-top: 50px;
+  position: relative;
   margin: auto;
-  margin-top: 100px;
-  width: 500px;
-  height: 400px;
-  border: 0px solid;
-  border-radius: 4px;
-  font-size: 12px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  /* opacity: rgba; */
+  display: flex;
+  width: 250px;
+  height: 200px;
+  align-items: center;
 }
 
 .login-card {
@@ -37,7 +32,8 @@ body {
   opacity: 1;
   margin: auto;
   margin-top: 100px;
-  width: 360px;
+  width: 400px;
+  height: 300px;
   border: 20px solid;
   border-color: rgba(255, 255, 255, 0.8);
   border-radius: 4px;
@@ -51,7 +47,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 100px;
   padding-bottom: 20px;
 }
 
@@ -93,7 +89,8 @@ body {
   background-color: #ffffff;
   margin: auto;
   margin-top: 100px;
-  width: 360px;
+  width: 400px;
+  height: 400px;
   border: 0px solid;
   border-radius: 4px;
   font-size: 12px;
@@ -105,6 +102,7 @@ body {
   justify-content: center;
   align-items: center;
   padding-bottom: 20px;
+  padding-top: 100px;
 }
 
 .create-input-field {
@@ -138,7 +136,7 @@ body {
 
 .button {
   color: white;
-  background-color: #31b3ef;
+  background-color: #31dcef;
   width: 98%;
   margin-top: 5px;
   padding-top: 6px;
@@ -156,7 +154,7 @@ body {
 .navbar {
   /* opacity: 0.7; */
   min-height: 35px;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding-top: 10px;
   position: fixed;
   text-decoration: none;
@@ -234,7 +232,8 @@ body {
 }
 
 .fav-card {
-  max-width: 300px;
+  max-width: 500px;
+  max-height: 500px;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -249,7 +248,7 @@ body {
   margin-bottom: 20px;
   border-radius: 0.25rem;
   /* overflow: hidden; */
-  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25); */
 }
 
 .resort-map {
@@ -258,6 +257,7 @@ body {
 }
 
 .resort-name {
+  justify-content: center;
   margin: auto;
   width: 100 px;
   height: 100 px;

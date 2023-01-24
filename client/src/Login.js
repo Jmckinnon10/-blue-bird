@@ -46,9 +46,6 @@ function Login({ setIsLoggedIn }) {
 
   return (
     <div>
-      <div className="title">
-        <h1>Blue Bird</h1>
-      </div>
       <div className="background-card">
         <div className="login-card">
           <div className="login-form">
