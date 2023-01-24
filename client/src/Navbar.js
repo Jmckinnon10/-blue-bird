@@ -1,35 +1,35 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function Navbar({ user, setIsLoggedIn }) {
+function Navbar({ user, setIsLoggedIn, setUser, isLoggedIn }) {
   const navigate = useNavigate();
 
   function handleLogout() {
+    console.log("User logged out");
     fetch("/logout", {
       method: "DELETE",
     });
-    console.log("User logged out");
     navigate("/");
+    setUser({});
     setIsLoggedIn(false);
   }
 
   return (
-    <div className="navbar">
-      {user ? (
+    <div>
+      <div className="navbar">
         <Link className="nav-link" to={`/users/${user.id}`}>
           Home
         </Link>
-      ) : null}
-      <Link className="nav-link" to="/FavoriteResort">
-        Favorite Resort
-      </Link>
-      <Link className="nav-link" to="/FollowTheSnow">
-        Follow The Snow
-      </Link>
-      <Link to="/" onClick={handleLogout} className="nav-link">
-        {" "}
-        Log Out
-      </Link>
+        <Link className="nav-link" to="/FavoriteResort">
+          Favorite Resort
+        </Link>
+        <Link className="nav-link" to="/FollowTheSnow">
+          Follow The Snow
+        </Link>
+        <button onClick={handleLogout} className="nav-link">
+          Log Out
+        </button>
+      </div>
     </div>
   );
 }

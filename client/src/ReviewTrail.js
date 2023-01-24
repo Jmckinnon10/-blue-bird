@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function ReviewTrail({ user, changeTrail, trails, mapTrails }) {
+function ReviewTrail({ user, changeTrail, trails, mapTrails, setNewReview }) {
   const [createReview, setCreateReview] = useState("");
   const [trailId, setTrailId] = useState(null);
   const [review, setReview] = useState({});
@@ -25,6 +25,7 @@ function ReviewTrail({ user, changeTrail, trails, mapTrails }) {
         .then((res) => res.json())
         .then((reviewData) => {
           setReview(reviewData);
+          setNewReview(true);
         })
         .catch((error) => {
           console.error(error);

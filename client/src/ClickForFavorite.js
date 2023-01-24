@@ -14,7 +14,7 @@ function ClickForFavorite({
   };
 
   const handleClick = (e) => {
-    e.stopPropagation();
+    e.stopPropagation(e);
     fetch("/favorite", {
       method: "POST",
       body: JSON.stringify(fav_obj),

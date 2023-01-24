@@ -1,7 +1,14 @@
 import React from "react";
 import Resorts from "./Resorts";
-
-function ResortsTrailsCollection({ resorts, user, setNewFavorite }) {
+import Navbar from "./Navbar";
+function ResortsTrailsCollection({
+  resorts,
+  user,
+  setNewFavorite,
+  setNewReview,
+  setUser,
+  setIsLoggedIn,
+}) {
   const mappedResorts = resorts.map((resort) => {
     //  console.log(resort.trails)
     // console.log(resort)
@@ -14,11 +21,17 @@ function ResortsTrailsCollection({ resorts, user, setNewFavorite }) {
         trails={resort.trails}
         user={user}
         setNewFavorite={setNewFavorite}
+        setNewReview={setNewReview}
       />
     );
   });
 
-  return <div className="top-div">{mappedResorts}</div>;
+  return (
+    <>
+      {/* <Navbar setUser={setUser} user={user} setIsLoggedIn={setIsLoggedIn} /> */}
+      <div className="top-div">{mappedResorts}</div>
+    </>
+  );
 }
 
 export default ResortsTrailsCollection;
