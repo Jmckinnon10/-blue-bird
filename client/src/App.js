@@ -6,6 +6,7 @@ import Navbar from "./Navbar";
 import ResortsTrailsCollection from "./ResortsTrailsCollection";
 import FavoriteResort from "./FavoriteResort";
 import Snow from "./Snowfall";
+import FollowTheSnow from "./FollowTheSnow";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -73,6 +74,10 @@ function App() {
         <Route
           path={"/FavoriteResort"}
           element={<FavoriteResort user={user} />}
+        ></Route>
+        <Route
+          path={"/FollowTheSnow"}
+          element={<FollowTheSnow user={user} />}
         ></Route>
       </Routes>
     </div>
