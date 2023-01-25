@@ -22,8 +22,8 @@ body {
   position: relative;
   margin: auto;
   display: flex;
-  width: 250px;
-  height: 200px;
+  width: 500px;
+  height: 225px;
   align-items: center;
 }
 
@@ -165,7 +165,7 @@ body {
 }
 
 .nav-link {
-  color: blue;
+  color: #31b3ef;
   text-decoration: none;
   font-weight: bold;
 }
@@ -293,6 +293,40 @@ body {
 
 .first-favorite {
   color: #31b3ef;
+  text-align: center;
+}
+
+.follow-the-snow {
+  max-width: 500px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 0.25rem;
+}
+
+.location {
+  color: #31b3ef;
+  text-align: center;
+}
+
+.submit-button {
+  display: block;
+  margin: auto;
+}
+
+p {
+  color: #31b3ef;
+  font-size: 20px;
   text-align: center;
 }
 /* text decoration: none 
