@@ -24,8 +24,9 @@ function ReviewTrail({ user, changeTrail, trails, mapTrails, setNewReview }) {
       })
         .then((res) => res.json())
         .then((reviewData) => {
+          console.log(reviewData)
           setReview(reviewData);
-          setNewReview(true);
+          // setNewReview(true)
         })
         .catch((error) => {
           console.error(error);
@@ -59,14 +60,22 @@ function ReviewTrail({ user, changeTrail, trails, mapTrails, setNewReview }) {
         <br />
         <div>
           <textarea
+            className="text-input"
             placeholder="Leave a trail review"
             value={createReview}
             onChange={changeReview}
           ></textarea>
           <br />
-          <button className="post-button" type="submit">
+          <button
+            style={{ cursor: "pointer" }}
+            className="post-button"
+            type="submit"
+          >
             POST REVIEW
           </button>
+          <br />
+          <p>Click trail to see reviews</p>
+          <p>Click ⭐ to favorite a trail</p>
         </div>
       </form>
       <ul className="trails">{mapTrails}</ul>

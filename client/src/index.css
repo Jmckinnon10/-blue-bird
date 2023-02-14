@@ -168,6 +168,7 @@ body {
   color: #31b3ef;
   text-decoration: none;
   font-weight: bold;
+  font-size: 20px;
 }
 
 .resort-cards {
@@ -324,10 +325,54 @@ body {
   margin: auto;
 }
 
+/* .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
 p {
   color: #31b3ef;
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
+  font-family: monaco;
 }
-/* text decoration: none 
-  cursor: pointer color: white */
+
+.review-tag {
+  font-size: 20px;
+  color: black;
+  text-align: left;
+}
+
+.trail-info {
+  float: left;
+  margin: 5px 0;
+}
+
+.container {
+  float: right;
+}
+
+.custom-bullet {
+  font-size: 20px;
+  font-family: Monaco;
+}
+
+.text-input {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 12px;
+  width: 80%;
+  height: 100px;
+}
+
+h1 {
+  font-family: Monaco;
+}
+
+.no-reviews {
+  color: black;
+  font-size: 20px;
+}

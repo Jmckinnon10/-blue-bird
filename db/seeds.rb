@@ -15,11 +15,13 @@ big_sky = Resort.create(name: "https://i.imgur.com/Q8WAhL9.jpg", map: "https://s
 park_city = Resort.create(name: "https://i.imgur.com/Xr0KQuB.jpg", map: "https://dam-assets.vailresorts.com/is/image/vailresorts/2223_PC_TrailMapArt_digital_partners?resMode=sharp2&w=1728&h=1247&wid=392&fit=constrain,1&dpr=on,2.625")
 killington = Resort.create(name: "https://i.imgur.com/pDG978B.jpg", map: "https://www.newenglandskihistory.com/maps/Vermont/killington/killingtonmap-2000-0000a.jpg")
 
-
 # okemo https://s3.onthesnow.com/images/trailmaps/vermont/okemo-mountain-resort/20161118205447/xlarge.jpg
 # jackson hole https://www.datocms-assets.com/50871/1636863909-2021-22-background-updated-outlines.jpg
 # big sky https://skimap.org/data/361/7/1257012299jpg_render.jpg
 # park city https://dam-assets.vailresorts.com/is/image/vailresorts/2223_PC_TrailMapArt_digital_partners?resMode=sharp2&w=1728&h=1247&wid=392&fit=constrain,1&dpr=on,2.625
+
+
+
 
 #Users
 john = User.create(username:"jmckinnon10", password: "12345678", first_name:"John", last_name:"McKinnon")
@@ -32,7 +34,7 @@ hunky_dory = Trail.create(name:"Hunky Dory ", difficulty: "🟦", resort_id: vai
 cloud_nine = Trail.create(name:"Cloud 9 ", difficulty: "🟦", resort_id: vail.id)
 chopstix = Trail.create(name:"Chopstix ", difficulty: "🟦", resort_id: vail.id)
 black_forest = Trail.create(name:"Black Forest ", difficulty: "🟦", resort_id: vail.id)
-klickity_klack = Trail.create(name:"Klickity Klack", difficulty: "♦", resort_id: vail.id)
+klickity_klack = Trail.create(name:"Klickity Klack", difficulty: "♦️", resort_id: vail.id)
 dragons_teeth = Trail.create(name:"Dragons Teeth", difficulty: "♦", resort_id: vail.id)
 shangri_la = Trail.create(name:"Shangri-La", difficulty: "♦", resort_id: vail.id)
 look_ma = Trail.create(name:"Look Ma", difficulty: "♦", resort_id: vail.id)
@@ -52,7 +54,6 @@ river_run = Trail.create(name:"River Run ", difficulty: "🟦", resort_id: keyst
 anticipation = Trail.create(name:"Anticipation ", difficulty: "🟦", resort_id: keystone.id)
 last_hoot = Trail.create(name:"Last Hoot", difficulty: "♦", resort_id: keystone.id)
 mineshaft = Trail.create(name:"Mineshaft", difficulty: "♦", resort_id: keystone.id)
-geronimo = Trail.create(name:"Geronimo", difficulty: "♦", resort_id: keystone.id)
 black_hawk = Trail.create(name:"Black Hawk", difficulty: "♦", resort_id: keystone.id)
 bullet_glades = Trail.create(name:"Bullet Glades", difficulty: "♦", resort_id: keystone.id)
 the_wolf_den = Trail.create(name:"The Wolf Den", difficulty: "♦", resort_id: keystone.id)
@@ -92,7 +93,7 @@ mine_shaft = Trail.create(name:"Mine Shaft", difficulty: "♦♦", resort_id: te
 tyro = Trail.create(name:"Tyro ", difficulty: "🟦", resort_id: stowe.id)
 ridgeview = Trail.create(name:"Ridgeview ", difficulty: "🟦", resort_id: stowe.id)
 midway = Trail.create(name:"Midway", difficulty: "♦", resort_id: stowe.id)
-upper_hayride = Trail.create(name:"Upper Hayride", difficulty: "♦", resort_id: stowe.id)
+upper_hayride = Trail.create(name:"Upper Hayride", difficulty: "", resort_id: stowe.id)
 centerline = Trail.create(name:"Centerline", difficulty: "♦", resort_id: stowe.id)
 maiden_lane = Trail.create(name:"Maiden Lane", difficulty: "♦", resort_id: stowe.id)
 upper_smugglers = Trail.create(name:"Upper Smugglers", difficulty: "♦", resort_id: stowe.id)

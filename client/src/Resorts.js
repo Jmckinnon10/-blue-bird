@@ -9,7 +9,7 @@ function Resorts({ name, map, trails, user, setNewFavorite, setNewReview }) {
 
   const mapTrails = trails.map((trail) => {
     return (
-      <li
+      <a
         style={{ cursor: "pointer" }}
         className="custom-bullet"
         key={trail.id}
@@ -17,9 +17,10 @@ function Resorts({ name, map, trails, user, setNewFavorite, setNewReview }) {
           setSelectedTrailId(selectedTrailId === trail.id ? null : trail.id)
         }
       >
-        {trail.name}
-        {trail.difficulty}
-
+        <div className="trail-info">
+          {trail.name}
+          {trail.difficulty}
+        </div>
         <ClickForFavorite
           setNewFavorite={setNewFavorite}
           user={user}
@@ -27,22 +28,28 @@ function Resorts({ name, map, trails, user, setNewFavorite, setNewReview }) {
           setFavoriteClicked={setFavoriteClicked}
           favoriteClicked={favoriteClicked}
         />
-
+        <br />
         {selectedTrailId === trail.id ? (
-          <div>
-            {trail.reviews.map((review) => (
-              <div className="review-box" key={review.id}>
-                <p>
-                  {review.review_name}:
-                  <br />
-                  <br />
-                  {review.comment}
-                </p>
-              </div>
-            ))}
-          </div>
+          trail.reviews.length ? (
+            <div>
+              {trail.reviews.map((review) => (
+                <div className="review-box" key={review.id}>
+                  <p className="review-tag">
+                    {review.review_name}:
+                    <br />
+                    <br />
+                    {review.comment
+                      ? review.comment
+                      : "No Reviews for this Trail yet"}
+                  </p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="no-reviews">Trail has not been reviewed</p>
+          )
         ) : null}
-      </li>
+      </a>
     );
   });
 

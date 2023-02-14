@@ -6,8 +6,6 @@ function ResortsTrailsCollection({
   user,
   setNewFavorite,
   setNewReview,
-  setUser,
-  setIsLoggedIn,
 }) {
   const mappedResorts = resorts.map((resort) => {
     //  console.log(resort.trails)

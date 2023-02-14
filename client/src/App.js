@@ -16,10 +16,9 @@ function App() {
   const [newFavorite, setNewFavorite] = useState(false);
   const [dataFetched, setDataFetched] = useState(false);
   const [newReview, setNewReview] = useState(false);
-  const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
-    if (newFavorite || !dataFetched || newReview) {
+    if (newFavorite || !dataFetched) {
       fetch("/me").then((r) => {
         if (r.ok) {
           r.json().then((userData) => setUser(userData));
@@ -29,7 +28,7 @@ function App() {
         }
       });
     }
-  }, [newFavorite, setNewFavorite, newReview, setNewReview]);
+  }, [newFavorite, setNewFavorite]);
 
   useEffect(() => {
     fetch("/resorts").then((r) => {
@@ -43,14 +42,12 @@ function App() {
     <div>
       <img className="blue-bird" src="https://i.imgur.com/eZM5DX4.png" />
       <Snow />
-
       <Navbar
         setUser={setUser}
         user={user}
         setIsLoggedIn={setIsLoggedIn}
         isLoggedIn={isLoggedIn}
       />
-
       <Routes>
         <Route
           exact

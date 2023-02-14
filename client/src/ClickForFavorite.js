@@ -10,7 +10,7 @@ function ClickForFavorite({
 }) {
   const [buttonColor, setButtonColor] = useState("white");
 
-  console.log(trail.id);
+  // console.log(trail.id);
   const fav_obj = {
     favorited: favoriteClicked,
     user_id: user.id,
@@ -38,7 +38,7 @@ function ClickForFavorite({
   };
 
   return (
-    <div>
+    <div className="container">
       <button
         onClick={handleClick}
         style={{ backgroundColor: buttonColor, cursor: "pointer" }}
